@@ -1,0 +1,15 @@
+{
+    "name": "Windows Speech Recognition",
+    "version": "1.0",
+    "description": "Recognize speech using Windows",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["override.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        "speech_recognition.js"
+    ],
+    "manifest_version": 2
+}
