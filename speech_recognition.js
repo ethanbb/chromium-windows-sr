@@ -3,5 +3,5 @@ window.webkitSpeechRecognition = function() {
 };
 
 window.speechLogMessage = function(message) {
-    window.postMessage({message: message}, window.location);
+    window.postMessage({type: 'SPEECH_MSG', message: message}, window.location);
 };

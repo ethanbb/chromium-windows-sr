@@ -1,7 +1,6 @@
 const script_url = chrome.runtime.getURL('speech_recognition.js');
 
 var s = document.createElement("script");
-s.type = 'module';
 s.src = script_url;
 
 document.body.appendChild(s);
@@ -11,7 +10,7 @@ window.addEventListener('message', receiveMessage, false);
 
 function receiveMessage(event) {
     // We only accept messages from ourselves
-    if (event.source !== window) {
+    if (event.source !== window || event.data.type !== 'SPEECH_MSG') {
         return;
     }
 
