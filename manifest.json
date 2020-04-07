@@ -2,12 +2,17 @@
     "name": "Windows Speech Recognition",
     "version": "1.0",
     "description": "Recognize speech using Windows",
+    "permissions": ["<all_urls>"],
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["override.js"]
+            "js": ["content.js"]
         }
     ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
     "web_accessible_resources": [
         "speech_recognition.js"
     ],
